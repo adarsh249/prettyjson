@@ -59,7 +59,7 @@ const JsonInput: React.FC = () => {
                 <br />
                 <textarea
                     rows={40} 
-                    cols={80}
+                    cols={60}
                     defaultValue={recentInput}
                 />
             </label>

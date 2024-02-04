@@ -4,11 +4,44 @@
 
 .json-form {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
 .output {
+  flex: 1;
+}
+
+pre {
+  display: inline-block;
+  justify-content: center;
   text-align: left;
+  border: 2px solid black;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-top: 0;
+}
+
+.json-input {
+  flex: 1;
+}
+
+textarea {
+  border: 2px solid black;
+  border-radius: 0.8rem;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 0.8rem;
+  margin: 0.3rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.output > p {
+  margin-bottom: 0;
+  margin-top: 0;
 }

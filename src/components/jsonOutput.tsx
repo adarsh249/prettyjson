@@ -11,10 +11,11 @@ const JsonOutput: React.FC<JsonOutputProps> = ({ formattedJSON }) => {
 
     return(
         <div className="output">
+            <p>Pretty JSON: </p>            
+            <button onClick={handleCopy}>Copy</button><br></br>
             <pre>
                 {formattedJSON}
-            </pre>
-            <button onClick={handleCopy}>Copy</button>
+            </pre> <br></br>
         </div> 
     );
         
