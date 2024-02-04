@@ -4,12 +4,17 @@ interface JsonOutputProps {
     formattedJSON: string;
 }
 const JsonOutput: React.FC<JsonOutputProps> = ({ formattedJSON }) => {
+
+    function handleCopy() {
+        navigator.clipboard.writeText(formattedJSON);
+    }
+
     return(
         <div className="output">
             <pre>
                 {formattedJSON}
             </pre>
-            <button>Copy</button>
+            <button onClick={handleCopy}>Copy</button>
         </div> 
     );
         
