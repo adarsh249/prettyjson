@@ -1,7 +1,7 @@
 {
   "name": "prettyjson",
   "version": "0.1.0",
-  "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -14,13 +14,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
     "start-client": "react-scripts start",
-    "start-server": "node ./src/backend/routes.mjs",
+    "start-server": "tsc && node ./dist/backend/routes.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,7 +43,9 @@
     ]
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "concurrently": "^8.2.2",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }

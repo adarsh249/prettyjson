@@ -2,7 +2,7 @@ import fs from 'fs';
 
 const dataFilePath = './src/backend/data.json';
 
-const saveData = (data) => {
+const saveData = (data:string) => {
     console.log('did this go through');
     if(fs.existsSync(dataFilePath)) {
         fs.unlinkSync(dataFilePath);

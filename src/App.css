@@ -1,9 +1,14 @@
 .App {
+  text-align: center;
+}
+
+.json-form {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
 
-  & h1 {
-    display: block;
-  }
+.output {
+  text-align: left;
 }

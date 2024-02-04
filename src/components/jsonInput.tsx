@@ -51,20 +51,23 @@ const JsonInput: React.FC = () => {
         };
         xhr.send(JSON.stringify(data));
     }
-    return (<form method="post" onSubmit={handleBeautify}>
-        <label>
-            Enter JSON Below:
+    return (
+    <div className="json-form">
+        <form method="post" onSubmit={handleBeautify}>
+            <label>
+                Enter JSON Below:
+                <br />
+                <textarea
+                    rows={40} 
+                    cols={80}
+                    defaultValue={recentInput}
+                />
+            </label>
             <br />
-            <textarea
-                rows={40} 
-                cols={80}
-                defaultValue={recentInput}
-            />
-        </label>
-        <br />
-        <button type="submit">Beautify!</button>
+            <button type="submit">Beautify!</button>
+        </form>
         {formattedJSON !== null && <JsonOutput formattedJSON={formattedJSON} />}
-    </form>);
+        </div>);
 }
 
 export default JsonInput;
