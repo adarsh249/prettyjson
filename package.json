@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
+    "start": "npm run start-client & npm run start-server",
     "start-client": "react-scripts start",
     "start-server": "tsc && node ./dist/backend/routes.js",
     "build": "react-scripts build",
