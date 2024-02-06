@@ -2,8 +2,9 @@
 
 To run this on your local machine, do:
 
-PREREQ: Have Node.js and npm installed. Do not have anything else running port 3000 3001.
-In a terminal,
+PREREQ: Have Node.js and npm installed. Do not have anything else running port 3000 3001. 
+
+## In a terminal
 
 1. `git clone https://github.com/adarsh249/prettyjson`
 2. `cd prettyjson`
