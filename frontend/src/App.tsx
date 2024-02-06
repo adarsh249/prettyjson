@@ -1,11 +1,8 @@
-import React, {useEffect} from 'react';
 import './App.css';
-import JsonInput from './components/jsonInput'
+import JsonInput from './components/jsonInput';
+import React from 'react';
 
 const App: React.FC = () => {
-  useEffect(() => {
-    document.title = "JSON Pretty Borderless";
-  }, []);
   return (
     <div className="App">
       <h1>JSON Pretty Borderless</h1>

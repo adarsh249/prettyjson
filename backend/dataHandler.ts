@@ -1,8 +1,8 @@
 import fs from 'fs';
 
-const dataFilePath = './src/backend/data.json';
+const dataFilePath = 'data.json';
 
-const saveData = (data:string) => {
+const saveData = (data:ReadableStream<Uint8Array> | null) => {
     if(fs.existsSync(dataFilePath)) {
         fs.unlinkSync(dataFilePath);
     }
