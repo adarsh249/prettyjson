@@ -1,5 +1,5 @@
-cd ./frontend
+cd ./backend
 npm start &
 
-cd ../backend
+cd ../frontend
 npm start
