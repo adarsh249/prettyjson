@@ -39,6 +39,8 @@ button {
 
 button:hover {
   cursor: pointer;
+  background-color: gray;
+  color: white;
 }
 
 .output > p {

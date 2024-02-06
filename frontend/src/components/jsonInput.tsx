@@ -6,6 +6,9 @@ const JsonInput: React.FC = () => {
     
     const [formattedJSON, setFormattedJSON] = useState<string | null>(null);
     const [recentInput, setRecentInput] = useState<string>('');
+    /**
+     * On page load, function retrieves the latest data from storage.
+     */
     useEffect(() => {
         fetch('http://localhost:3001/load')
         .then(res => res.json())
@@ -17,6 +20,10 @@ const JsonInput: React.FC = () => {
         })
     }, []);
 
+    /**
+     * Function prevents default behavior of the submit button and sets formatted JSON to beautify it or throw an error.
+     * @param e Submit button
+     */
     function handleBeautify(e: React.FormEvent) {
         e.preventDefault();
         const form = e.currentTarget;
@@ -30,11 +37,17 @@ const JsonInput: React.FC = () => {
             }
 
         } catch(e) {
-            setFormattedJSON('Error: JSON is incorrectly formatted.')
+            setFormattedJSON('Error: JSON is incorrectly formatted.');
+
         }
 
     }
 
+    /**
+     * This function calls the backend service /save API and saves the valid JSON to storage
+     * upon submission.
+     * @param data The inputted JSON
+     */
     function save(data:string){
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://localhost:3001/save', true);

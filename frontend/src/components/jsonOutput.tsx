@@ -5,6 +5,9 @@ interface JsonOutputProps {
 }
 const JsonOutput: React.FC<JsonOutputProps> = ({ formattedJSON }) => {
 
+    /**
+     * This function copies the formattedJSON to the clipboard.
+     */
     function handleCopy() {
         navigator.clipboard.writeText(formattedJSON);
     }

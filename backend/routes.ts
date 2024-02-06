@@ -6,10 +6,17 @@ const { saveData, loadData } = pkg;
 const app = express();
 const PORT = 3001;
 
-app.use(bodyParse.json());
+app.use(bodyParse.json()); //use for every request
+
+//Bad idea to enable cors, but needed to run on two different ports.
+//This implementation allows us to only allow requests from port 3000.
 app.use(cors({
     origin: "http://localhost:3000",
 }));
+
+/**
+ * POST /save API call to save data to storage.
+ */
 app.post('/save', (req, res) => {
     const jsonData = req.body;
     const saveResult = saveData(jsonData);
@@ -21,6 +28,9 @@ app.post('/save', (req, res) => {
     }
 });
 
+/**
+ * GET /load API call to fetch most recent submission.
+ */
 app.get('/load', (req, res) => {
     const loadedData = loadData();
     if(loadedData !== undefined && loadedData !== null) {
@@ -31,6 +41,7 @@ app.get('/load', (req, res) => {
     }
 });
 
+//Print to console on successful start.
 app.listen(PORT, () => {
     console.log(`Backend service running on port ${PORT}!`);
 });
